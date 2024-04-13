@@ -1,0 +1,9 @@
+{
+    "files": [
+        "CustomChart.qml",
+        "CustomLegend.qml",
+        "plotter.py",
+        "main.py",
+        "main.qml"
+    ]
+}
