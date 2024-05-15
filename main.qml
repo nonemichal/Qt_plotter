@@ -5,6 +5,7 @@ import QtQuick.Dialogs
 import QtQuick.Layouts
 import QtCharts
 
+// Main window
 ApplicationWindow {
     id: root
     width: 640
@@ -15,6 +16,7 @@ ApplicationWindow {
 
     property string dataName
 
+    // Menu bar on the top of program
     menuBar: MenuBar {
         Menu {
             title: qsTr("&File")
@@ -54,6 +56,7 @@ ApplicationWindow {
         }
     }
 
+    // File dialog to open .csv files
     FileDialog {
         id: fileOpenDialog
         title: "File dialog"
@@ -66,6 +69,7 @@ ApplicationWindow {
         }
     }
 
+    // Dialog which provides informations about program
     Dialog {
         id: aboutDialog
         width: 300
@@ -102,11 +106,13 @@ ApplicationWindow {
         }
     }
 
+    // Main window is made of 2 columns
     Column {
         id: column
         anchors.fill: parent
         spacing: 0
 
+        // Chart column
         CustomChart {
             id: customChart
             width: parent.width
@@ -118,6 +124,7 @@ ApplicationWindow {
             }
         }
 
+        // Legend column
         CustomLegend {
             id: customLegend
             width: parent.width
@@ -126,6 +133,7 @@ ApplicationWindow {
         }
     }
 
+    // Function to save chart as an image
     function saveChart(filename){
         customChart.grabToImage(function(result) {
             result.saveToFile(filename);

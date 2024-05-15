@@ -1,10 +1,14 @@
 import QtQuick
 
+// Legen as Rectangle object
 Rectangle {
     id: legend
     color: "white"
 
+    // Series name
     property alias name: label.text
+
+    // Series color
     property alias color: marker.color
 
     Row {

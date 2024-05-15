@@ -13,6 +13,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     engine = QQmlApplicationEngine()
 
+    # Use plotter.py in QML
     qmlRegisterType(plotter.Plotter, 'Plotters', 1, 0, 'Plotter')
 
     qml_file = CURRENT_DIRECTORY / "main.qml"
